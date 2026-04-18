@@ -28,4 +28,4 @@ The evaluation pipeline operates entirely reference-free using a tripartite agen
 * **Hardware:** Optimized for 4-bit quantized execution on dual NVIDIA T4 GPUs.
 
 ##  Usage
-The codebase is designed to run in a Kaggle or Google Colab environment with GPU acceleration. Ensure you have your `HF_TOKEN` configured in your environment secrets to download the necessary Hugging Face models.
+The codebase is designed to run in a Kaggle environment with GPU acceleration. Ensure you have your `HF_TOKEN` configured in your environment secrets to download the necessary Hugging Face models.
