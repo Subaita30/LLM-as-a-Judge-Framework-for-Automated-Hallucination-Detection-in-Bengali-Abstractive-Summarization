@@ -22,10 +22,10 @@ The evaluation pipeline operates entirely reference-free using a tripartite agen
 * `/notebooks`: Contains the Kaggle Jupyter Notebook for the multi-agent pipeline (`CrewAI`, `LangChain`, `Transformers`).
 * `/results`: Contains the generated outputs, including Phase 1 model comparisons and the final Phase 2 mT5 hallucination classifications.
 
-## 🚀 Tech Stack
+##  Tech Stack
 * **Languages & Libraries:** Python, PyTorch, Transformers, LangChain, CrewAI, Hugging Face Hub, Pandas.
 * **Models:** `google/gemma-2-9b-it`, `csebuetnlp/mT5_multilingual_XLSum`, `Llama-3`, `Qwen2.5`.
 * **Hardware:** Optimized for 4-bit quantized execution on dual NVIDIA T4 GPUs.
 
-## 📝 Usage
+##  Usage
 The codebase is designed to run in a Kaggle or Google Colab environment with GPU acceleration. Ensure you have your `HF_TOKEN` configured in your environment secrets to download the necessary Hugging Face models.
