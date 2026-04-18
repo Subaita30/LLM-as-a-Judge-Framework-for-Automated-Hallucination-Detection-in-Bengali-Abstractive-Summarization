@@ -1,26 +1,31 @@
-# Multi-Agent LLM Benchmark for Bengali Abstractive Summarization
+# LLM-as-a-Judge: Automated Hallucination Detection in Bengali Summarization
 
-An automated, reference-free evaluation pipeline that utilizes a compute-efficient multi-agent architecture to systematically compute Faithfulness Scores for Bengali text summaries.
+This repository contains the research paper and implementation code for a fully automated, reference-free evaluation framework designed to detect factual hallucinations in Bengali abstractive summarization. 
 
-## Overview
-Bengali abstractive summarization has historically been hindered by noisy reference datasets. To overcome this, this project establishes a novel factual consistency benchmark by analyzing linguistic error patterns produced by the pre-trained `mT5-base` model on 200 samples from the XL-Sum Bengali test set.
+## 📌 Project Overview
+Abstractive summarization models frequently generate factual hallucinations, a critical vulnerability in low-resource languages like Bengali. Traditional overlap metrics (like ROUGE) and noisy human references fail to evaluate factual consistency accurately. 
 
-## Methodology
-Instead of relying on flawed human reference labels, this pipeline employs a **Multi-Model Consensus Ensemble** (Llama-3-8B, Gemma-2-9B, and Qwen2.5-7B) acting as automated judges. 
+This project introduces a **cross-lingual, multi-agent Large Language Model (LLM) architecture** that systematically verifies factual grounding against dynamically retrieved source contexts without requiring human annotators.
 
-The architecture consists of three stages:
-1. **Fact Extractor (Atomic Parser):** Extracts core claims from the generated Bengali summary.
-2. **Grounding Verifier (Contextual Investigator):** Cross-references claims against the original source article.
-3. **Judicial Auditor (Final Arbiter):** Categorizes specific hallucination types (e.g., Entity, Date, Number) and outputs a final JSON verdict. A summary is only flagged as a hallucination if a strict majority of the models independently corroborate the failure.
+### Key Findings
+* **Optimal Judge:** `Gemma-2-9B-IT` achieved the highest empirical accuracy (66.67%) for Bengali-to-English reasoning.
+* **Baseline Hallucination Rate:** An audit of 200 mT5-generated Bengali summaries from the XL-Sum dataset revealed a severe **61.50% hallucination rate**.
+* **Error Typologies:** The most prevalent errors were General Errors (46.3%), Entity Swapping (30.1%), Numerical Alterations (12.2%), and Unsupported Claims (11.4%).
 
-## Results
+## 🏗️ Multi-Agent Architecture
+The evaluation pipeline operates entirely reference-free using a tripartite agent system:
+1. **Fact Extractor:** Decomposes Bengali summaries into atomic English claims.
+2. **Grounding Verifier:** Systematically cross-references claims against dynamically retrieved source contexts.
+3. **Judicial Auditor:** Synthesizes the verifier's report to cast a final faithfulness verdict and categorize errors.
 
-<img width="5936" height="1542" alt="results_chart" src="https://github.com/user-attachments/assets/7eea8326-89c0-4e52-b05b-fe563c26faf0" />
+## 📁 Repository Structure
+* `/notebooks`: Contains the Kaggle Jupyter Notebook for the multi-agent pipeline (`CrewAI`, `LangChain`, `Transformers`).
+* `/results`: Contains the generated outputs, including Phase 1 model comparisons and the final Phase 2 mT5 hallucination classifications.
 
-## Files in this Repository
-* `SumLLM_MultiAgent_Benchmark.ipynb`: The complete executable Kaggle notebook, heavily optimized with 4-bit quantization and sequential memory clearing to run three massive LLMs on a single GPU.
-* `full_200_consensus.csv`: The final output data containing the generated summaries, the individual model votes, and the categorized consensus error types.
+## 🚀 Tech Stack
+* **Languages & Libraries:** Python, PyTorch, Transformers, LangChain, CrewAI, Hugging Face Hub, Pandas.
+* **Models:** `google/gemma-2-9b-it`, `csebuetnlp/mT5_multilingual_XLSum`, `Llama-3`, `Qwen2.5`.
+* **Hardware:** Optimized for 4-bit quantized execution on dual NVIDIA T4 GPUs.
 
-## Tech Stack
-* **Models:** mT5-base, Llama-3 (8B), Gemma-2 (9B), Qwen-2.5 (7B)
-* **Libraries:** HuggingFace Transformers, Datasets, PyTorch, Pandas, Matplotlib, BitsAndBytes
+## 📝 Usage
+The codebase is designed to run in a Kaggle or Google Colab environment with GPU acceleration. Ensure you have your `HF_TOKEN` configured in your environment secrets to download the necessary Hugging Face models.
