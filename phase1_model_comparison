@@ -1,0 +1,31 @@
+article_id,expected_label,gemma_2_9b_it_status,gemma_2_9b_it_error,Qwen2.5_7B_Instruct_status,Qwen2.5_7B_Instruct_error,Meta_Llama_3_8B_Instruct_status,Meta_Llama_3_8B_Instruct_error
+news-45155508,Faithful,Faithful,None,Faithful,None,Error,Execution Failed
+news-39127107,Faithful,Hallucinated,Number,Faithful,None,Faithful,None
+news-49141918,Faithful,Faithful,None,Faithful,None,Faithful,None
+news-52808250,Faithful,Faithful,None,Hallucinated,Contradiction,Hallucinated,Contradiction
+news-45408278,Faithful,Faithful,None,Faithful,None,Faithful,None
+news-54230851,Faithful,Hallucinated,Other,Faithful,None,Error,Execution Failed
+news-46205974,Faithful,Faithful,None,Faithful,None,Hallucinated,Other
+140427_pg_bd_heat_dhaka_ac,Faithful,Hallucinated,Claim,Hallucinated,Contradiction,Faithful,None
+news-56880849,Faithful,Faithful,None,Faithful,None,Faithful,None
+news-56080104,Faithful,Faithful,None,Hallucinated,Contradiction,Hallucinated,Other
+news-54239981,Faithful,Faithful,None,Faithful,None,Faithful,None
+news-56878093,Faithful,Faithful,None,Hallucinated,Contradiction,Error,Execution Failed
+news-51083336,Faithful,Hallucinated,None,Hallucinated,Contradiction,Faithful,None
+news-56728594,Faithful,Hallucinated,None,Faithful,None,Faithful,None
+news-52668365,Faithful,Hallucinated,Not Supported,Faithful,None,Hallucinated,Other
+news-45932627,Hallucinated,Hallucinated,Entity,Faithful,None,Hallucinated,ParsingError
+news-46002945,Hallucinated,Hallucinated,Entity,Hallucinated,Contradiction,Hallucinated,Contradiction
+news-55754177,Hallucinated,Hallucinated,None,Hallucinated,Contradiction,Faithful,None
+news-52220120,Hallucinated,Hallucinated,Entity,Hallucinated,Contradiction,Faithful,None
+news-48290970,Hallucinated,Hallucinated,Number,Hallucinated,Contradiction,Hallucinated,Number
+news-52345995,Hallucinated,Faithful,None,Faithful,None,Hallucinated,Entity
+news-48488145,Hallucinated,Hallucinated,Entity,Faithful,None,Faithful,None
+news-46175088,Hallucinated,Hallucinated,Entity,Hallucinated,Contradiction,Hallucinated,Contradiction
+news-55427149,Hallucinated,Faithful,None,Faithful,None,Faithful,None
+news-56766795,Hallucinated,Hallucinated,Other,Faithful,None,Hallucinated,Other
+news-50280907,Hallucinated,Hallucinated,Number,Hallucinated,Contradiction,Faithful,None
+news-54898675,Hallucinated,Hallucinated,None,Faithful,None,Faithful,None
+news-41902828,Hallucinated,Faithful,None,Faithful,None,Hallucinated,Other
+news-51381825,Hallucinated,Faithful,None,Hallucinated,Contradiction,Faithful,None
+news-48872060,Hallucinated,Hallucinated,None,Hallucinated,Contradiction,Faithful,None
